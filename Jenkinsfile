@@ -1,6 +1,6 @@
 pipeline {
     environment {
-    registry = "niraj1286/docker_automation"
+    registry = "niraj1286/docker_nodejs"
     registryCredential = "dockerhub"
     dockerImage = ''
     PATH = "$PATH:/usr/local/bin"
