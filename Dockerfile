@@ -1,5 +1,5 @@
 # Selecting the base image to build our own customised node.js application microservice
-FROM node:latest
+FROM node:4.1.1
 
 # Working directory inside the container
 WORKDIR /usr/src/app
@@ -26,7 +26,5 @@ COPY . .
 # Expose the port
 EXPOSE 3000
 
-# Starting the app with CMD - 
+# Starting the app with CMD -
 CMD ["node", "app.js"]
-
-
