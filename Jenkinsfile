@@ -1,7 +1,7 @@
 pipeline {
     environment {
     registry = "278215072102.dkr.ecr.eu-west-1.amazonaws.com/docker_nodejs"
-    registryCredential = "jenkins-ecs"
+    registryCredential = "ecr:eu-west-1:jenkins-ecs"
     dockerImage = ''
     PATH = "$PATH:/usr/local/bin"
 }
