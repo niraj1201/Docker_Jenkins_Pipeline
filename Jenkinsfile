@@ -25,7 +25,7 @@ pipeline {
             stage('Deploying Docker Image to Dockerhub') {
                 steps {
                     script {
-                        docker.withRegistry('https://278215072102.dkr.ecr.eu-west-1.amazonaws.com', 'ecr:eu-west-1:jenkins-ecs') {
+                        docker.withRegistry('https://278215072102.dkr.ecr.eu-west-1.amazonaws.com', registryCredential) {
                         dockerImage.push()
                         }
                     }
