@@ -1,7 +1,7 @@
 pipeline {
     environment {
     registry = "278215072102.dkr.ecr.eu-west-1.amazonaws.com/docker_nodejs"
-    registryCredential = "jenkins-ecs"
+    registryCredential = "ecr:eu-west-1:jenkins-ecs"
     dockerImage = ''
     PATH = "$PATH:/usr/local/bin"
 }
@@ -25,7 +25,7 @@ pipeline {
             stage('Deploying Docker Image to Dockerhub') {
                 steps {
                     script {
-                        docker.withRegistry('https://278215072102.dkr.ecr.eu-west-1.amazonaws.com', 'ecr:eu-west-1:registryCredential') {
+                        docker.withRegistry('https://278215072102.dkr.ecr.eu-west-1.amazonaws.com', registryCredential) {
                         dockerImage.push()
                         }
                     }
